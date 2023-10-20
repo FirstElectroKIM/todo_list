@@ -29,10 +29,11 @@ function App() {
     if (filter === "ALL") return true;
     if (filter === "DONE") return todo.isDone === true;
     if (filter === "NOT DONE") return todo.isDone === false;
-  }).sort((a, b) => {
-      if( sort === "none") return 0;
-      if( sort === "createdAT") return a.createdAt - b.createdAt;
-      if( sort === "content") return a.content.localeCompare(b.content);
+  })
+    .sort((a, b) => {
+      if(sort === "none") return 0;
+      if(sort === "createdAT") return a.createdAt - b.createdAt;
+      if(sort === "content") return a.content.localeCompare(b.content);
   })
 
   return (
@@ -121,7 +122,7 @@ function App() {
               * id : "38b5c80a-008a-47f4-81f1-bb50fa206c29"
               * isDone : false },
               * 두번째 todo,
-              * 서밴째 todo
+              * 세번째 todo
               */
                 const nextTodos = todos.map((todo, idx) =>
                   idx === index ? { ...todo, isDone: e.target.checked } : todo
